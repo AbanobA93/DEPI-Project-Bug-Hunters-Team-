@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="5" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-09T01:53:05 EET" name="Default suite" finished-at="2025-11-09T01:53:33 EET" duration-ms="28102">
+    <groups>
+    </groups>
+    <test started-at="2025-11-09T01:53:05 EET" name="Default test" finished-at="2025-11-09T01:53:33 EET" duration-ms="28102">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory8">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:05 EET" name="initialize" finished-at="2025-11-09T01:53:16 EET" duration-ms="11468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="verifyProductsButtonVisibility()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:16 EET" name="verifyProductsButtonVisibility" description="Verify that the “Products” button is visible on the navigation menu" finished-at="2025-11-09T01:53:16 EET" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductsButtonVisibility -->
+        <test-method signature="verifyNavigationToAllProductsPage()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:16 EET" name="verifyNavigationToAllProductsPage" description="Verify navigation to “ALL PRODUCTS” page from the “Products” button" finished-at="2025-11-09T01:53:18 EET" duration-ms="1474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToAllProductsPage -->
+        <test-method signature="verifyProductListingsDisplay()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:18 EET" name="verifyProductListingsDisplay" description="Verify that the “ALL PRODUCTS” page displays product listings" finished-at="2025-11-09T01:53:19 EET" duration-ms="1472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductListingsDisplay -->
+        <test-method signature="verifyProductSearchFunctionality()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:19 EET" name="verifyProductSearchFunctionality" description="Verify search/filter options on “ALL PRODUCTS” page" finished-at="2025-11-09T01:53:24 EET" duration-ms="4251" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Search Function Doesnot Work using Enter Key expected [https://automationexercise.com/products?search=shirt] but found [https://automationexercise.com/products]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Search Function Doesnot Work using Enter Key expected [https://automationexercise.com/products?search=shirt] but found [https://automationexercise.com/products]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at seleniumPackage.Automation_Excercise.UserStory_8.UserStory8.verifyProductSearchFunctionality(UserStory8.java:53)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductSearchFunctionality -->
+        <test-method signature="verifyNavigationToProductDetailPage()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:24 EET" name="verifyNavigationToProductDetailPage" description="Verify that user can click on a product to open its detail page." finished-at="2025-11-09T01:53:26 EET" duration-ms="2437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToProductDetailPage -->
+        <test-method signature="verifyProductDetails()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:26 EET" name="verifyProductDetails" description="Verify product detail page displays name, category, price, availability, condition, and brand." finished-at="2025-11-09T01:53:29 EET" duration-ms="2590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductDetails -->
+        <test-method signature="verifyNavigationBackToAllProductsPage()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:29 EET" name="verifyNavigationBackToAllProductsPage" description="Verify navigation back to &#039;ALL PRODUCTS&#039; page from the product detail page." finished-at="2025-11-09T01:53:33 EET" duration-ms="3802" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [All Products] but found [ ]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [All Products] but found [ ]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at seleniumPackage.Automation_Excercise.UserStory_8.UserStory8.verifyNavigationBackToAllProductsPage(UserStory8.java:85)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationBackToAllProductsPage -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@5911e990]" started-at="2025-11-09T01:53:33 EET" name="closeBrowser" finished-at="2025-11-09T01:53:33 EET" duration-ms="451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory8 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

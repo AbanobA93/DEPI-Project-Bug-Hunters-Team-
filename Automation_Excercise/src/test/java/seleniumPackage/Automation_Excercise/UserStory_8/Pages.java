@@ -1,6 +1,7 @@
 package seleniumPackage.Automation_Excercise.UserStory_8;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,6 +23,14 @@ public class Pages {
 	public final String firstProductAvaliability = "In Stock";
 	public final String firstProductCondition = "New";
 	public final String firstProductBrand = "Polo";
+	public final String exactSearchKeyword = "Sleeves Top and Short - Blue & Pink";
+	public final String partialSearchKeyword = "Blue";
+	public final String mixedCaseSearchKeyword = "sLeeVes Top aNd sHort - BluE & piNk";
+	public final String nonExistantProductKeyword = "sleeves top and short - red & black";
+	public final String specialCharSearchKeyword = "Top - White";
+	public final String searchWithSpacesKeyword = "       White ";
+	public final int	maxNumberOfItemsInStock = 34;
+	
 	// Locators
 	private By productNavigationButton = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a");
 	private By emailField = By.name("email");
@@ -38,7 +47,8 @@ public class Pages {
 	private By firstProductPriceLocator = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/span");
 	private By firstProductConditionLocator = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]");
 	private By firstProductBrandLocator = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]");
-	
+	private By productNamesLocator = By.xpath("//div[@class='productinfo text-center']/p");
+	private By allProductsHeaderLocator = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
 	
 	public Pages(WebDriver driver) {
 		this.driver = driver;
@@ -98,6 +108,10 @@ public class Pages {
 		getSearchButton().click();
 	}
 	
+	public void searchFieldClear() {
+		getSearchField().clear();
+	}
+	
 	public void clickViewFirstProductButton() {
 		get(viewFirstProductButton).click();
 		
@@ -132,5 +146,20 @@ public class Pages {
 		String brand = get(firstProductBrandLocator).getText();
 		return brand.replace("Brand:", "").trim();
 		
+	}
+	
+	public List<WebElement> getProductTitle() {
+		return driver.findElements(productNamesLocator);
+	}
+	
+	public boolean isNoProductFoundMessageVisible() {
+		
+		if(driver.findElements(productNamesLocator).isEmpty()) {
+			return true; //we will assume that if the list is empty then that is the no product found mesage
+		}else return false;
+	}
+	
+	public String getAllProductsHeader() {
+		return get(allProductsHeaderLocator).getText();
 	}
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Pages {
 	private WebDriver driver;
@@ -49,9 +50,9 @@ public class Pages {
 	private By firstProductBrandLocator = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]");
 	private By productNamesLocator = By.xpath("//div[@class='productinfo text-center']/p");
 	private By allProductsHeaderLocator = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
-	private By categorySidebarHeader = By.id("accordian");
+	private By categorySidebarHeader = By.id("accordian");											
 	private By mainCategoriesLocator =By.xpath("//div[@class='panel-heading']/h4/a");
-	
+	private By categoryTitleHeaderLocator = By.xpath("/html/body/section/div/div[2]/div[2]/div/h2");
 	
 	public Pages(WebDriver driver) {
 		this.driver = driver;
@@ -60,17 +61,16 @@ public class Pages {
 
 	// utils
 	private WebElement get(By locator) {
-		return driver.findElement(locator);
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
 	// Home Page
 	public void navigateToHomePage() {
 		driver.get(baseUrl);
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(loginNavigationButton));
 	}
 
 	// Login Page
-
 	public void clickLoginNavigationButton() {
 		get(loginNavigationButton).click();
 	}
@@ -88,6 +88,7 @@ public class Pages {
 
 	public void clickProductNavigationButton() {
 		get(productNavigationButton).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(allProductsHeaderLocator));
 	}
 
 	public WebElement getProductsItemsGrid() {
@@ -117,7 +118,7 @@ public class Pages {
 	
 	public void clickViewFirstProductButton() {
 		get(viewFirstProductButton).click();
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(firstProductNameLocator));
 	}
 	public String getFirstProductName() {
 		return get(firstProductNameLocator).getText();
@@ -126,7 +127,6 @@ public class Pages {
 	public String getFirstProductCategory() {
 		String category = get(firstProductCategoryLocator).getText();
 		return category.replace("Category:", "").trim();
-
 	}
 	
 	public String getFirstProductPrice() {
@@ -136,27 +136,23 @@ public class Pages {
 	public String getFirstProductAvaliability() {
 		String avaliability = get(firstProductAvaliabilityLocator).getText();
 		return avaliability.replace("Availability:", "").trim();
-		
 	}
 	
 	public String getFirstProductCondition() {
 		String condition = get(firstProductConditionLocator).getText();
 		return condition.replace("Condition:", "").trim();
-		
 	}
 	
 	public String getFirstProductBrand() {
 		String brand = get(firstProductBrandLocator).getText();
 		return brand.replace("Brand:", "").trim();
-		
 	}
 	
 	public List<WebElement> getProductTitle() {
-		return driver.findElements(productNamesLocator);
+		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(productNamesLocator));
 	}
 	
 	public boolean isNoProductFoundMessageVisible() {
-		
 		if(driver.findElements(productNamesLocator).isEmpty()) {
 			return true; //we will assume that if the list is empty then that is the no product found mesage
 		}else return false;
@@ -171,29 +167,32 @@ public class Pages {
 	}
 	
 	public List<WebElement> getAllMainCategories() {
-	    return driver.findElements(mainCategoriesLocator);
+	    return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(mainCategoriesLocator));
 	}
 	
 	public List<WebElement> getSubCategories(String categoryName) {
-        By subCatListLocator = By.xpath("//*[@id="+"\"" +categoryName.charAt(0)+categoryName.substring(1).toLowerCase()+ "\""+ "]/div/ul/li");
-        return driver.findElements(subCatListLocator);
+		By subCatListLocator = By.xpath("//*[@id="+"\"" +categoryName.charAt(0)+categoryName.substring(1).toLowerCase()+ "\""+ "]/div/ul/li/a");
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(subCatListLocator));
     }
 	
 	public void clickMainCategory(String categoryName) {
         for(WebElement category: getAllMainCategories()) {
-        	if(category.getText().toLowerCase()==categoryName.toLowerCase()) {
+        	if(category.getText().toLowerCase().trim().equals(categoryName.toLowerCase())) {
         		category.click();
+        		return;
         	}
         }
      }
 	
 	public void clickSubCategory(String categoryName, String subCategoryName) {
 		for(WebElement category: getAllMainCategories()) {
-        	if(category.getText().toLowerCase()==categoryName.toLowerCase()) {
+        	if(category.getText().toLowerCase().trim().equals(categoryName.toLowerCase())) {
         		category.click();
         		for(WebElement subCategory: getSubCategories(categoryName)) {
-                	if(subCategory.getText().toLowerCase()==subCategoryName.toLowerCase()) {
+                	if(subCategory.getText().toLowerCase().trim().equals(subCategoryName.toLowerCase())) {
                 		subCategory.click();
+                		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryTitleHeaderLocator));
+                		return;
                 	}
                 }
         	}
@@ -201,6 +200,6 @@ public class Pages {
 	}
 	
 	public String getCategoryTitle() {
-		return getAllProductsHeader();
+		return get(categoryTitleHeaderLocator).getText();
 	}
 }

@@ -104,7 +104,7 @@ public class UserStory9 {
   }
   
   
-  @Test(priority = 8, description = "Verify search with empty input")
+  @Test(priority = 9, description = "Verify search with empty input")
   public void verifySearchWithEmptyInput() {
 	  softAssert = new SoftAssert();
 	  page.searchFieldClear();
@@ -113,7 +113,7 @@ public class UserStory9 {
 	  softAssert.assertAll();
   }
   
-  @Test(priority = 9 , description = "Verify if search is performed using Enter key and search icon both")
+  @Test(priority = 10 , description = "Verify if search is performed using Enter key and search icon both")
   public void verifySearchTriggerMethods() {
 	  softAssert = new SoftAssert();
 	  page.clickProductNavigationButton();

@@ -49,6 +49,9 @@ public class Pages {
 	private By firstProductBrandLocator = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]");
 	private By productNamesLocator = By.xpath("//div[@class='productinfo text-center']/p");
 	private By allProductsHeaderLocator = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
+	private By categorySidebarHeader = By.id("accordian");
+	private By mainCategoriesLocator =By.xpath("//div[@class='panel-heading']/h4/a");
+	
 	
 	public Pages(WebDriver driver) {
 		this.driver = driver;
@@ -161,5 +164,43 @@ public class Pages {
 	
 	public String getAllProductsHeader() {
 		return get(allProductsHeaderLocator).getText();
+	}
+	
+	public WebElement getCategorySidebarHeader() {
+		return get(categorySidebarHeader);
+	}
+	
+	public List<WebElement> getAllMainCategories() {
+	    return driver.findElements(mainCategoriesLocator);
+	}
+	
+	public List<WebElement> getSubCategories(String categoryName) {
+        By subCatListLocator = By.xpath("//*[@id="+"\"" +categoryName.charAt(0)+categoryName.substring(1).toLowerCase()+ "\""+ "]/div/ul/li");
+        return driver.findElements(subCatListLocator);
+    }
+	
+	public void clickMainCategory(String categoryName) {
+        for(WebElement category: getAllMainCategories()) {
+        	if(category.getText().toLowerCase()==categoryName.toLowerCase()) {
+        		category.click();
+        	}
+        }
+     }
+	
+	public void clickSubCategory(String categoryName, String subCategoryName) {
+		for(WebElement category: getAllMainCategories()) {
+        	if(category.getText().toLowerCase()==categoryName.toLowerCase()) {
+        		category.click();
+        		for(WebElement subCategory: getSubCategories(categoryName)) {
+                	if(subCategory.getText().toLowerCase()==subCategoryName.toLowerCase()) {
+                		subCategory.click();
+                	}
+                }
+        	}
+        }
+	}
+	
+	public String getCategoryTitle() {
+		return getAllProductsHeader();
 	}
 }

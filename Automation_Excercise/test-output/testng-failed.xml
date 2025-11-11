@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory9">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory10">
         <methods>
+          <include name="closeBrowser"/>
+          <include name="verifySearchTriggerMethods"/>
           <include name="initialize"/>
           <include name="verifySearchWithLeadingTrailingSpaces"/>
-          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory9 -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory10 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,57 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-13T23:51:36 EET" name="Default suite" finished-at="2025-11-13T23:51:59 EET" duration-ms="22326">
+  <suite started-at="2025-11-14T00:29:58 EET" name="Default suite" finished-at="2025-11-14T00:30:35 EET" duration-ms="37020">
     <groups>
     </groups>
-    <test started-at="2025-11-13T23:51:36 EET" name="Default test" finished-at="2025-11-13T23:51:59 EET" duration-ms="22326">
-      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory11">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:36 EET" name="initialize" finished-at="2025-11-13T23:51:47 EET" duration-ms="10853" status="PASS">
+    <test started-at="2025-11-14T00:29:58 EET" name="Default test" finished-at="2025-11-14T00:30:35 EET" duration-ms="37020">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory12">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:29:58 EET" name="initialize" finished-at="2025-11-14T00:30:12 EET" duration-ms="13096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="verifyBrandSidebarVisibility()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:47 EET" name="verifyBrandSidebarVisibility" description="Verify that the brand sidebar is visible" finished-at="2025-11-13T23:51:47 EET" duration-ms="57" status="PASS">
+        <test-method signature="verifyWriteYourReviewSectionIsVisible()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:12 EET" name="verifyWriteYourReviewSectionIsVisible" description="Verify that the &#039;Write Your Review&#039; section is visible" finished-at="2025-11-14T00:30:12 EET" duration-ms="48" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyBrandSidebarVisibility -->
-        <test-method signature="verifyAllBrandsAreListed()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:47 EET" name="verifyAllBrandsAreListed" description="Verify that all available brands are listed" finished-at="2025-11-13T23:51:48 EET" duration-ms="317" status="PASS">
+        </test-method> <!-- verifyWriteYourReviewSectionIsVisible -->
+        <test-method signature="verifyAllReviewInputFieldsArePresent()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:12 EET" name="verifyAllReviewInputFieldsArePresent" description="Verify all review input fields are present" finished-at="2025-11-14T00:30:12 EET" duration-ms="231" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAllBrandsAreListed -->
-        <test-method signature="verifyNavigationToBrandPage()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:48 EET" name="verifyNavigationToBrandPage" description="Verify navigation to a specific brand page" finished-at="2025-11-13T23:51:49 EET" duration-ms="1205" status="PASS">
+        </test-method> <!-- verifyAllReviewInputFieldsArePresent -->
+        <test-method signature="verifyReviewSubmissionWithValidDataAndSuccessMessage()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:12 EET" name="verifyReviewSubmissionWithValidDataAndSuccessMessage" description="Verify that review submission works with valid data" finished-at="2025-11-14T00:30:14 EET" duration-ms="2553" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNavigationToBrandPage -->
-        <test-method signature="verifyConfirmatoryTextOnBrandPage()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:49 EET" name="verifyConfirmatoryTextOnBrandPage" description="Verify confirmatory text or heading on brand page" finished-at="2025-11-13T23:51:50 EET" duration-ms="1201" status="PASS">
+        </test-method> <!-- verifyReviewSubmissionWithValidDataAndSuccessMessage -->
+        <test-method signature="verifyMandatoryFieldsValidation()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:14 EET" name="verifyMandatoryFieldsValidation" description="Verify mandatory fields validation (e.g., empty email)" finished-at="2025-11-14T00:30:17 EET" duration-ms="2785" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyConfirmatoryTextOnBrandPage -->
-        <test-method signature="verifyOnlyBrandSpecificProductsDisplayed()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:50 EET" name="verifyOnlyBrandSpecificProductsDisplayed" description="Verify that only brand-specific products are displayed" finished-at="2025-11-13T23:51:51 EET" duration-ms="1426" status="PASS">
+        </test-method> <!-- verifyMandatoryFieldsValidation -->
+        <test-method signature="verifyEmailFieldValidation()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:17 EET" name="verifyEmailFieldValidation" description="Verify email field validation (per test data)" finished-at="2025-11-14T00:30:20 EET" duration-ms="2591" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyOnlyBrandSpecificProductsDisplayed -->
-        <test-method signature="verifySelectingNewBrandUpdatesList()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:51 EET" name="verifySelectingNewBrandUpdatesList" description="Verify that selecting a new brand updates the product list" finished-at="2025-11-13T23:51:54 EET" duration-ms="2587" status="PASS">
+        </test-method> <!-- verifyEmailFieldValidation -->
+        <test-method signature="verifySubmissionWithSpacesOnlyReview()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:20 EET" name="verifySubmissionWithSpacesOnlyReview" description="Verify review submission with only spaces in review text (per test data)" finished-at="2025-11-14T00:30:22 EET" duration-ms="2457" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySelectingNewBrandUpdatesList -->
-        <test-method signature="verifyURLUpdatesForBrand()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:54 EET" name="verifyURLUpdatesForBrand" description="Verify URL updates according to selected brand" finished-at="2025-11-13T23:51:55 EET" duration-ms="1109" status="PASS">
+        </test-method> <!-- verifySubmissionWithSpacesOnlyReview -->
+        <test-method signature="verifyFieldsAreClearedAfterSubmission()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:22 EET" name="verifyFieldsAreClearedAfterSubmission" description="Verify that fields are cleared after successful submission" finished-at="2025-11-14T00:30:25 EET" duration-ms="2718" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyURLUpdatesForBrand -->
-        <test-method signature="verifySidebarRemainsAccessible()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:55 EET" name="verifySidebarRemainsAccessible" description="Verify sidebar and brand list remain accessible" finished-at="2025-11-13T23:51:57 EET" duration-ms="1458" status="PASS">
+        </test-method> <!-- verifyFieldsAreClearedAfterSubmission -->
+        <test-method signature="verifyCustomerReviewsSectionIsNotDisplayed()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:25 EET" name="verifyCustomerReviewsSectionIsNotDisplayed" description="Verify that customer reviews are not displayed" finished-at="2025-11-14T00:30:35 EET" duration-ms="10060" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySidebarRemainsAccessible -->
-        <test-method signature="verifyNavigationWithLongBrandName()[pri:9, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:57 EET" name="verifyNavigationWithLongBrandName" description="Verify brand selection with long brand names" finished-at="2025-11-13T23:51:58 EET" duration-ms="1612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNavigationWithLongBrandName -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:58 EET" name="closeBrowser" finished-at="2025-11-13T23:51:59 EET" duration-ms="431" status="PASS">
+        </test-method> <!-- verifyCustomerReviewsSectionIsNotDisplayed -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:35 EET" name="closeBrowser" finished-at="2025-11-14T00:30:35 EET" duration-ms="416" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory11 -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory12 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -56,6 +56,12 @@ public class Pages {
 	private By brandSidebarHeader = By.className("brands-name");
 	private By allBrandsLinksLocator = By.xpath("//*[@class=\"brands-name\"]/ul/li/a");
 	
+	private By writeYourReviewHeader = By.xpath("/html/body/section/div/div/div[2]/div[3]/div[1]/ul/li/a");
+	private By reviewNameField = By.id("name");
+	private By reviewEmailField = By.id("email");
+	private By reviewTextArea = By.id("review");
+	private By reviewSubmitButton = By.id("button-review");
+	private By reviewSuccessMessage = By.xpath("//*[@id=\"review-section\"]/div/div/span");
 	
 	public Pages(WebDriver driver) {
 		this.driver = driver;
@@ -227,5 +233,73 @@ public class Pages {
 	
 	public String getBrandPageTitle() {
 	    return getCategoryTitle();
+	}
+	
+	public WebElement getWriteYourReviewHeader() {
+	    return get(writeYourReviewHeader);
+	}
+
+	public WebElement getReviewNameField() {
+	    return get(reviewNameField);
+	}
+
+	public WebElement getReviewEmailField() {
+	    return get(reviewEmailField);
+	}
+
+	public WebElement getReviewTextArea() {
+	    return get(reviewTextArea);
+	}
+
+	public WebElement getReviewSubmitButton() {
+	    return get(reviewSubmitButton);
+	}
+	
+	public void submitReview(String name, String email, String review) {
+	    getReviewNameField().sendKeys(name);
+	    getReviewEmailField().sendKeys(email);
+	    getReviewTextArea().sendKeys(review);
+	    getReviewSubmitButton().click();
+	}
+	
+	public WebElement getReviewSuccessMessage() {
+	    return wait.until(ExpectedConditions.visibilityOfElementLocated(reviewSuccessMessage));
+	}
+	
+	public boolean isSuccessMessageDisplayed() {
+	    try {
+	        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	        shortWait.until(ExpectedConditions.visibilityOfElementLocated(reviewSuccessMessage));
+	        return true;
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+	
+	public boolean isReviewFormCleared() {
+	    boolean isNameEmpty = getReviewNameField().getAttribute("value").isEmpty();
+	    boolean isEmailEmpty = getReviewEmailField().getAttribute("value").isEmpty();
+	    boolean isReviewEmpty = getReviewTextArea().getAttribute("value").isEmpty();
+	    return isNameEmpty && isEmailEmpty && isReviewEmpty;
+	}
+	
+	public boolean isCustomerReviewsSectionVisible() {
+	    By customerReviewsLocator = By.id("customer-reviews-section"); 
+	    return !driver.findElements(customerReviewsLocator).isEmpty();
+	}
+	
+	public void waitForReviewFormToClear() {
+		
+	        boolean nameCleared = wait.until(ExpectedConditions.attributeToBe(reviewNameField, "value", ""));
+	        while(!nameCleared) {
+	        	nameCleared = wait.until(ExpectedConditions.attributeToBe(reviewNameField, "value", ""));
+	        }
+	        return;
+	}
+	
+	public void clearReviewFormFields() {
+		getReviewNameField().clear();
+	    getReviewEmailField().clear();
+	    getReviewTextArea().clear();
 	}
 }

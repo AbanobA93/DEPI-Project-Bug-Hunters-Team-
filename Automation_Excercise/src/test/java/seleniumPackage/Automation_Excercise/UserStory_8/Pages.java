@@ -53,6 +53,9 @@ public class Pages {
 	private By categorySidebarHeader = By.id("accordian");											
 	private By mainCategoriesLocator =By.xpath("//div[@class='panel-heading']/h4/a");
 	private By categoryTitleHeaderLocator = By.xpath("/html/body/section/div/div[2]/div[2]/div/h2");
+	private By brandSidebarHeader = By.className("brands-name");
+	private By allBrandsLinksLocator = By.xpath("//*[@class=\"brands-name\"]/ul/li/a");
+	
 	
 	public Pages(WebDriver driver) {
 		this.driver = driver;
@@ -201,5 +204,28 @@ public class Pages {
 	
 	public String getCategoryTitle() {
 		return get(categoryTitleHeaderLocator).getText();
+	}
+	
+	public WebElement getBrandSidebarHeader() {
+		return get(brandSidebarHeader);
+	}
+	
+	public List<WebElement> getAllBrandLinks() {
+	    return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(allBrandsLinksLocator));
+	}
+	
+	public void clickBrandLink(String brandName) {
+		for (WebElement brand : getAllBrandLinks()) {
+			if(brand.getText().toLowerCase().trim().contains(brandName.toLowerCase().trim())) {
+				brand.click();	
+				wait.until(ExpectedConditions.visibilityOfElementLocated(categoryTitleHeaderLocator));
+	            return;
+			}
+		}
+		throw new RuntimeException("Could not find brand link with name: " + brandName);
+	}
+	
+	public String getBrandPageTitle() {
+	    return getCategoryTitle();
 	}
 }

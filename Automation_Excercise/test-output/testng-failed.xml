@@ -3,17 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory10">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory11">
         <methods>
-          <include name="verifyConfirmatoryText"/>
           <include name="closeBrowser"/>
-          <include name="verifyNavigationAndProductListMatch"/>
+          <include name="verifyAllBrandsAreListed"/>
           <include name="initialize"/>
-          <include name="verifyNoDuplicateCategories"/>
-          <include name="verifySubcategoriesAppear"/>
-          <include name="verifyCategorySelectionUpdatesURL"/>
         </methods>
-      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory10 -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory11 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

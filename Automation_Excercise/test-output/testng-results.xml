@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-12T00:04:00 EET" name="Default suite" finished-at="2025-11-12T00:04:24 EET" duration-ms="23826">
+  <suite started-at="2025-11-13T23:51:36 EET" name="Default suite" finished-at="2025-11-13T23:51:59 EET" duration-ms="22326">
     <groups>
     </groups>
-    <test started-at="2025-11-12T00:04:00 EET" name="Default test" finished-at="2025-11-12T00:04:24 EET" duration-ms="23826">
-      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory10">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:00 EET" name="initialize" finished-at="2025-11-12T00:04:10 EET" duration-ms="10549" status="PASS">
+    <test started-at="2025-11-13T23:51:36 EET" name="Default test" finished-at="2025-11-13T23:51:59 EET" duration-ms="22326">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory11">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:36 EET" name="initialize" finished-at="2025-11-13T23:51:47 EET" duration-ms="10853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="verifyCategorySidebarVisibility()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:10 EET" name="verifyCategorySidebarVisibility" description="Verify that category sidebar is visible and contains main categories." finished-at="2025-11-12T00:04:10 EET" duration-ms="52" status="PASS">
+        <test-method signature="verifyBrandSidebarVisibility()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:47 EET" name="verifyBrandSidebarVisibility" description="Verify that the brand sidebar is visible" finished-at="2025-11-13T23:51:47 EET" duration-ms="57" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCategorySidebarVisibility -->
-        <test-method signature="verifyAllMainCategoriesDisplayed()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:10 EET" name="verifyAllMainCategoriesDisplayed" description="Verify that all expected main categories are displayed in the sidebar." finished-at="2025-11-12T00:04:11 EET" duration-ms="157" status="PASS">
+        </test-method> <!-- verifyBrandSidebarVisibility -->
+        <test-method signature="verifyAllBrandsAreListed()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:47 EET" name="verifyAllBrandsAreListed" description="Verify that all available brands are listed" finished-at="2025-11-13T23:51:48 EET" duration-ms="317" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAllMainCategoriesDisplayed -->
-        <test-method signature="verifySubcategoriesAppear()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:11 EET" name="verifySubcategoriesAppear" description="Verify that subcategories appear under main category." finished-at="2025-11-12T00:04:13 EET" duration-ms="2167" status="PASS">
+        </test-method> <!-- verifyAllBrandsAreListed -->
+        <test-method signature="verifyNavigationToBrandPage()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:48 EET" name="verifyNavigationToBrandPage" description="Verify navigation to a specific brand page" finished-at="2025-11-13T23:51:49 EET" duration-ms="1205" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySubcategoriesAppear -->
-        <test-method signature="verifyNavigationAndProductListMatch()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:13 EET" name="verifyNavigationAndProductListMatch" description="Verify navigation to a selected subcategory and content match." finished-at="2025-11-12T00:04:15 EET" duration-ms="1760" status="PASS">
+        </test-method> <!-- verifyNavigationToBrandPage -->
+        <test-method signature="verifyConfirmatoryTextOnBrandPage()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:49 EET" name="verifyConfirmatoryTextOnBrandPage" description="Verify confirmatory text or heading on brand page" finished-at="2025-11-13T23:51:50 EET" duration-ms="1201" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNavigationAndProductListMatch -->
-        <test-method signature="verifyConfirmatoryText()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:15 EET" name="verifyConfirmatoryText" description="Verify confirmatory text on category page." finished-at="2025-11-12T00:04:16 EET" duration-ms="1876" status="PASS">
+        </test-method> <!-- verifyConfirmatoryTextOnBrandPage -->
+        <test-method signature="verifyOnlyBrandSpecificProductsDisplayed()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:50 EET" name="verifyOnlyBrandSpecificProductsDisplayed" description="Verify that only brand-specific products are displayed" finished-at="2025-11-13T23:51:51 EET" duration-ms="1426" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyConfirmatoryText -->
-        <test-method signature="verifyCategorySelectionUpdatesURL()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:16 EET" name="verifyCategorySelectionUpdatesURL" description="Verify category selection updates URL." finished-at="2025-11-12T00:04:18 EET" duration-ms="1852" status="PASS">
+        </test-method> <!-- verifyOnlyBrandSpecificProductsDisplayed -->
+        <test-method signature="verifySelectingNewBrandUpdatesList()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:51 EET" name="verifySelectingNewBrandUpdatesList" description="Verify that selecting a new brand updates the product list" finished-at="2025-11-13T23:51:54 EET" duration-ms="2587" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCategorySelectionUpdatesURL -->
-        <test-method signature="verifyNewCategoryUpdatesProducts()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:18 EET" name="verifyNewCategoryUpdatesProducts" description="Verify that selecting a new category updates products accordingly (cross-category check)." finished-at="2025-11-12T00:04:22 EET" duration-ms="3868" status="PASS">
+        </test-method> <!-- verifySelectingNewBrandUpdatesList -->
+        <test-method signature="verifyURLUpdatesForBrand()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:54 EET" name="verifyURLUpdatesForBrand" description="Verify URL updates according to selected brand" finished-at="2025-11-13T23:51:55 EET" duration-ms="1109" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNewCategoryUpdatesProducts -->
-        <test-method signature="verifyNoDuplicateCategories()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:22 EET" name="verifyNoDuplicateCategories" description="Verify that no duplicate categories or subcategories appear." finished-at="2025-11-12T00:04:23 EET" duration-ms="988" status="PASS">
+        </test-method> <!-- verifyURLUpdatesForBrand -->
+        <test-method signature="verifySidebarRemainsAccessible()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:55 EET" name="verifySidebarRemainsAccessible" description="Verify sidebar and brand list remain accessible" finished-at="2025-11-13T23:51:57 EET" duration-ms="1458" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNoDuplicateCategories -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory10@5911e990]" started-at="2025-11-12T00:04:23 EET" name="closeBrowser" finished-at="2025-11-12T00:04:24 EET" duration-ms="482" status="PASS">
+        </test-method> <!-- verifySidebarRemainsAccessible -->
+        <test-method signature="verifyNavigationWithLongBrandName()[pri:9, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:57 EET" name="verifyNavigationWithLongBrandName" description="Verify brand selection with long brand names" finished-at="2025-11-13T23:51:58 EET" duration-ms="1612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationWithLongBrandName -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory11@31000e60]" started-at="2025-11-13T23:51:58 EET" name="closeBrowser" finished-at="2025-11-13T23:51:59 EET" duration-ms="431" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory10 -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory11 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

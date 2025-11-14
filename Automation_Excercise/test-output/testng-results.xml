@@ -1,57 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-14T02:38:48 EET" name="Default suite" finished-at="2025-11-14T02:39:13 EET" duration-ms="24150">
+  <suite started-at="2025-11-14T14:33:24 EET" name="Default suite" finished-at="2025-11-14T14:34:01 EET" duration-ms="37005">
     <groups>
     </groups>
-    <test started-at="2025-11-14T02:38:48 EET" name="Default test" finished-at="2025-11-14T02:39:13 EET" duration-ms="24150">
-      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory13">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:38:48 EET" name="initialize" finished-at="2025-11-14T02:38:59 EET" duration-ms="10985" status="PASS">
+    <test started-at="2025-11-14T14:33:24 EET" name="Default test" finished-at="2025-11-14T14:34:01 EET" duration-ms="37005">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory8">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:24 EET" name="initialize" finished-at="2025-11-14T14:33:35 EET" duration-ms="11178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="verifySubscriptionTextVisible()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:38:59 EET" name="verifySubscriptionTextVisible" description="Verify that &#039;SUBSCRIPTION&#039; text is visible" finished-at="2025-11-14T02:39:00 EET" duration-ms="105" status="PASS">
+        <test-method signature="verifyProductsButtonVisibility()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:35 EET" name="verifyProductsButtonVisibility" description="Verify that the “Products” button is visible on the navigation menu" finished-at="2025-11-14T14:33:35 EET" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySubscriptionTextVisible -->
-        <test-method signature="verifyEmailFieldAndButtonVisible()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:00 EET" name="verifyEmailFieldAndButtonVisible" description="Verify email input and subscribe button are visible" finished-at="2025-11-14T02:39:00 EET" duration-ms="107" status="PASS">
+        </test-method> <!-- verifyProductsButtonVisibility -->
+        <test-method signature="verifyNavigationToAllProductsPage()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:35 EET" name="verifyNavigationToAllProductsPage" description="Verify navigation to “ALL PRODUCTS” page from the “Products” button" finished-at="2025-11-14T14:33:39 EET" duration-ms="3256" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEmailFieldAndButtonVisible -->
-        <test-method signature="verifySuccessfulSubscription()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:00 EET" name="verifySuccessfulSubscription" description="Verify successful subscription with valid email" finished-at="2025-11-14T02:39:02 EET" duration-ms="1944" status="PASS">
+        </test-method> <!-- verifyNavigationToAllProductsPage -->
+        <test-method signature="verifyProductListingsDisplay()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:39 EET" name="verifyProductListingsDisplay" description="Verify that the “ALL PRODUCTS” page displays product listings" finished-at="2025-11-14T14:33:43 EET" duration-ms="4275" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySuccessfulSubscription -->
-        <test-method signature="verifySuccessMessageText()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:02 EET" name="verifySuccessMessageText" description="Verify success message text after valid submission" finished-at="2025-11-14T02:39:03 EET" duration-ms="1839" status="PASS">
+        </test-method> <!-- verifyProductListingsDisplay -->
+        <test-method signature="verifyProductSearchFunctionality()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:43 EET" name="verifyProductSearchFunctionality" description="Verify search/filter options on “ALL PRODUCTS” page" finished-at="2025-11-14T14:33:49 EET" duration-ms="6306" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Search Function Doesnot Work using Enter Key expected [https://automationexercise.com/products?search=shirt] but found [https://automationexercise.com/products]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Search Function Doesnot Work using Enter Key expected [https://automationexercise.com/products?search=shirt] but found [https://automationexercise.com/products]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at seleniumPackage.Automation_Excercise.UserStory_8.UserStory8.verifyProductSearchFunctionality(UserStory8.java:114)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySuccessMessageText -->
-        <test-method signature="verifyInvalidEmailFormatAcceptance()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:03 EET" name="verifyInvalidEmailFormatAcceptance" description="Verify invalid email format is accepted" finished-at="2025-11-14T02:39:05 EET" duration-ms="1826" status="PASS">
+        </test-method> <!-- verifyProductSearchFunctionality -->
+        <test-method signature="verifyNavigationToProductDetailPage()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:49 EET" name="verifyNavigationToProductDetailPage" description="Verify that user can click on a product to open its detail page." finished-at="2025-11-14T14:33:53 EET" duration-ms="3396" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyInvalidEmailFormatAcceptance -->
-        <test-method signature="verifyEmptyEmailSubmission()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:05 EET" name="verifyEmptyEmailSubmission" description="Verify empty email field cannot be submitted" finished-at="2025-11-14T02:39:05 EET" duration-ms="220" status="PASS">
+        </test-method> <!-- verifyNavigationToProductDetailPage -->
+        <test-method signature="verifyProductDetails()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:53 EET" name="verifyProductDetails" description="Verify product detail page displays name, category, price, availability, condition, and brand." finished-at="2025-11-14T14:33:56 EET" duration-ms="2969" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEmptyEmailSubmission -->
-        <test-method signature="verifyDuplicateSubscriptions()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:05 EET" name="verifyDuplicateSubscriptions" description="Verify that the system allows duplicate subscriptions " finished-at="2025-11-14T02:39:08 EET" duration-ms="2129" status="PASS">
+        </test-method> <!-- verifyProductDetails -->
+        <test-method signature="verifyNavigationBackToAllProductsPage()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:33:56 EET" name="verifyNavigationBackToAllProductsPage" description="Verify navigation back to &#039;ALL PRODUCTS&#039; page from the product detail page." finished-at="2025-11-14T14:34:01 EET" duration-ms="5116" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDuplicateSubscriptions -->
-        <test-method signature="verifyFormClearsAfterSubmission()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:08 EET" name="verifyFormClearsAfterSubmission" description="Verify that the form clears after successful subscription" finished-at="2025-11-14T02:39:09 EET" duration-ms="1886" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFormClearsAfterSubmission -->
-        <test-method signature="verifyInvalidCharactersInEmail()[pri:9, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:09 EET" name="verifyInvalidCharactersInEmail" description="Verify email field validation with invalid characters" finished-at="2025-11-14T02:39:12 EET" duration-ms="2397" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInvalidCharactersInEmail -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:12 EET" name="closeBrowser" finished-at="2025-11-14T02:39:13 EET" duration-ms="644" status="PASS">
+        </test-method> <!-- verifyNavigationBackToAllProductsPage -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory8@2002348]" started-at="2025-11-14T14:34:01 EET" name="closeBrowser" finished-at="2025-11-14T14:34:01 EET" duration-ms="379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory13 -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory8 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

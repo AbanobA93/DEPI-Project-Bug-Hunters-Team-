@@ -25,6 +25,7 @@ public class UserStory13 {
 		page.clickLoginNavigationButton();
 		page.signin();
 		page.clickProductNavigationButton();
+		
 	}
 
 	@Test(priority = 1, description = "Verify that 'SUBSCRIPTION' text is visible")

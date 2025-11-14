@@ -295,9 +295,7 @@ public class Pages {
 	}
 	
 	public boolean waitForReviewFormToClear() {
-		
 	    return   wait.until(ExpectedConditions.attributeToBe(reviewNameField, "value", ""));
-
 	}
 	
 	public void clearReviewFormFields() {

@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-14T00:29:58 EET" name="Default suite" finished-at="2025-11-14T00:30:35 EET" duration-ms="37020">
+  <suite started-at="2025-11-14T02:38:48 EET" name="Default suite" finished-at="2025-11-14T02:39:13 EET" duration-ms="24150">
     <groups>
     </groups>
-    <test started-at="2025-11-14T00:29:58 EET" name="Default test" finished-at="2025-11-14T00:30:35 EET" duration-ms="37020">
-      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory12">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:29:58 EET" name="initialize" finished-at="2025-11-14T00:30:12 EET" duration-ms="13096" status="PASS">
+    <test started-at="2025-11-14T02:38:48 EET" name="Default test" finished-at="2025-11-14T02:39:13 EET" duration-ms="24150">
+      <class name="seleniumPackage.Automation_Excercise.UserStory_8.UserStory13">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:38:48 EET" name="initialize" finished-at="2025-11-14T02:38:59 EET" duration-ms="10985" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="verifyWriteYourReviewSectionIsVisible()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:12 EET" name="verifyWriteYourReviewSectionIsVisible" description="Verify that the &#039;Write Your Review&#039; section is visible" finished-at="2025-11-14T00:30:12 EET" duration-ms="48" status="PASS">
+        <test-method signature="verifySubscriptionTextVisible()[pri:1, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:38:59 EET" name="verifySubscriptionTextVisible" description="Verify that &#039;SUBSCRIPTION&#039; text is visible" finished-at="2025-11-14T02:39:00 EET" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWriteYourReviewSectionIsVisible -->
-        <test-method signature="verifyAllReviewInputFieldsArePresent()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:12 EET" name="verifyAllReviewInputFieldsArePresent" description="Verify all review input fields are present" finished-at="2025-11-14T00:30:12 EET" duration-ms="231" status="PASS">
+        </test-method> <!-- verifySubscriptionTextVisible -->
+        <test-method signature="verifyEmailFieldAndButtonVisible()[pri:2, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:00 EET" name="verifyEmailFieldAndButtonVisible" description="Verify email input and subscribe button are visible" finished-at="2025-11-14T02:39:00 EET" duration-ms="107" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAllReviewInputFieldsArePresent -->
-        <test-method signature="verifyReviewSubmissionWithValidDataAndSuccessMessage()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:12 EET" name="verifyReviewSubmissionWithValidDataAndSuccessMessage" description="Verify that review submission works with valid data" finished-at="2025-11-14T00:30:14 EET" duration-ms="2553" status="PASS">
+        </test-method> <!-- verifyEmailFieldAndButtonVisible -->
+        <test-method signature="verifySuccessfulSubscription()[pri:3, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:00 EET" name="verifySuccessfulSubscription" description="Verify successful subscription with valid email" finished-at="2025-11-14T02:39:02 EET" duration-ms="1944" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyReviewSubmissionWithValidDataAndSuccessMessage -->
-        <test-method signature="verifyMandatoryFieldsValidation()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:14 EET" name="verifyMandatoryFieldsValidation" description="Verify mandatory fields validation (e.g., empty email)" finished-at="2025-11-14T00:30:17 EET" duration-ms="2785" status="PASS">
+        </test-method> <!-- verifySuccessfulSubscription -->
+        <test-method signature="verifySuccessMessageText()[pri:4, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:02 EET" name="verifySuccessMessageText" description="Verify success message text after valid submission" finished-at="2025-11-14T02:39:03 EET" duration-ms="1839" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMandatoryFieldsValidation -->
-        <test-method signature="verifyEmailFieldValidation()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:17 EET" name="verifyEmailFieldValidation" description="Verify email field validation (per test data)" finished-at="2025-11-14T00:30:20 EET" duration-ms="2591" status="PASS">
+        </test-method> <!-- verifySuccessMessageText -->
+        <test-method signature="verifyInvalidEmailFormatAcceptance()[pri:5, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:03 EET" name="verifyInvalidEmailFormatAcceptance" description="Verify invalid email format is accepted" finished-at="2025-11-14T02:39:05 EET" duration-ms="1826" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEmailFieldValidation -->
-        <test-method signature="verifySubmissionWithSpacesOnlyReview()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:20 EET" name="verifySubmissionWithSpacesOnlyReview" description="Verify review submission with only spaces in review text (per test data)" finished-at="2025-11-14T00:30:22 EET" duration-ms="2457" status="PASS">
+        </test-method> <!-- verifyInvalidEmailFormatAcceptance -->
+        <test-method signature="verifyEmptyEmailSubmission()[pri:6, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:05 EET" name="verifyEmptyEmailSubmission" description="Verify empty email field cannot be submitted" finished-at="2025-11-14T02:39:05 EET" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySubmissionWithSpacesOnlyReview -->
-        <test-method signature="verifyFieldsAreClearedAfterSubmission()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:22 EET" name="verifyFieldsAreClearedAfterSubmission" description="Verify that fields are cleared after successful submission" finished-at="2025-11-14T00:30:25 EET" duration-ms="2718" status="PASS">
+        </test-method> <!-- verifyEmptyEmailSubmission -->
+        <test-method signature="verifyDuplicateSubscriptions()[pri:7, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:05 EET" name="verifyDuplicateSubscriptions" description="Verify that the system allows duplicate subscriptions " finished-at="2025-11-14T02:39:08 EET" duration-ms="2129" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFieldsAreClearedAfterSubmission -->
-        <test-method signature="verifyCustomerReviewsSectionIsNotDisplayed()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:25 EET" name="verifyCustomerReviewsSectionIsNotDisplayed" description="Verify that customer reviews are not displayed" finished-at="2025-11-14T00:30:35 EET" duration-ms="10060" status="PASS">
+        </test-method> <!-- verifyDuplicateSubscriptions -->
+        <test-method signature="verifyFormClearsAfterSubmission()[pri:8, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:08 EET" name="verifyFormClearsAfterSubmission" description="Verify that the form clears after successful subscription" finished-at="2025-11-14T02:39:09 EET" duration-ms="1886" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCustomerReviewsSectionIsNotDisplayed -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory12@2002348]" started-at="2025-11-14T00:30:35 EET" name="closeBrowser" finished-at="2025-11-14T00:30:35 EET" duration-ms="416" status="PASS">
+        </test-method> <!-- verifyFormClearsAfterSubmission -->
+        <test-method signature="verifyInvalidCharactersInEmail()[pri:9, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:09 EET" name="verifyInvalidCharactersInEmail" description="Verify email field validation with invalid characters" finished-at="2025-11-14T02:39:12 EET" duration-ms="2397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidCharactersInEmail -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumPackage.Automation_Excercise.UserStory_8.UserStory13@31000e60]" started-at="2025-11-14T02:39:12 EET" name="closeBrowser" finished-at="2025-11-14T02:39:13 EET" duration-ms="644" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory12 -->
+      </class> <!-- seleniumPackage.Automation_Excercise.UserStory_8.UserStory13 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

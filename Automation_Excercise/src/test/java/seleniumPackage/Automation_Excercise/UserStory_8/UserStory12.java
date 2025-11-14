@@ -54,7 +54,7 @@ public class UserStory12 {
         softAssert.assertAll();
     }
 
-    @Test(priority = 4, description = "Verify mandatory fields validation (e.g., empty email)")
+    @Test(priority = 4, description = "Verify mandatory fields validation ")
     public void verifyMandatoryFieldsValidation() {
     	softAssert = new SoftAssert();
         page.submitReview("Mahmoud Ehab", "", "best product ever");
@@ -63,7 +63,7 @@ public class UserStory12 {
         softAssert.assertAll();
     }
 
-    @Test(priority = 5, description = "Verify email field validation (per test data)")
+    @Test(priority = 5, description = "Verify email field accepts invalid email format ")
     public void verifyEmailFieldValidation() {
     	softAssert = new SoftAssert();
         page.submitReview("Mahmoud Ehab", "mahmoudehab30@afgaga.com", "best product ever");
@@ -72,7 +72,7 @@ public class UserStory12 {
         softAssert.assertAll();
     }
     
-    @Test(priority = 6, description = "Verify review submission with only spaces in review text (per test data)")
+    @Test(priority = 6, description = "Verify review submission with only spaces in review text is accepted ")
     public void verifySubmissionWithSpacesOnlyReview() {
     	softAssert = new SoftAssert();
         page.submitReview("Mahmoud Ehab", "mahmoudehab30@gmail.com", "   ");

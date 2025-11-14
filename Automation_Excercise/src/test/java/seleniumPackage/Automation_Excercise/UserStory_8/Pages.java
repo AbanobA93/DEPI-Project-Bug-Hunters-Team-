@@ -55,13 +55,19 @@ public class Pages {
 	private By categoryTitleHeaderLocator = By.xpath("/html/body/section/div/div[2]/div[2]/div/h2");
 	private By brandSidebarHeader = By.className("brands-name");
 	private By allBrandsLinksLocator = By.xpath("//*[@class=\"brands-name\"]/ul/li/a");
-	
 	private By writeYourReviewHeader = By.xpath("/html/body/section/div/div/div[2]/div[3]/div[1]/ul/li/a");
 	private By reviewNameField = By.id("name");
 	private By reviewEmailField = By.id("email");
 	private By reviewTextArea = By.id("review");
 	private By reviewSubmitButton = By.id("button-review");
 	private By reviewSuccessMessage = By.xpath("//*[@id=\"review-section\"]/div/div/span");
+	
+	private By subscriptionHeaderLocator =By.xpath("//footer[@id='footer']//h2[text()='Subscription']");
+	private By subscriptionEmailField = By.id("susbscribe_email");
+	private By subscribeButton = By.id("subscribe");
+	private By subscriptionSuccessMessage = By.xpath("//*[@id=\"success-subscribe\"]/div");
+	
+	
 	
 	public Pages(WebDriver driver) {
 		this.driver = driver;
@@ -288,13 +294,10 @@ public class Pages {
 	    return !driver.findElements(customerReviewsLocator).isEmpty();
 	}
 	
-	public void waitForReviewFormToClear() {
+	public boolean waitForReviewFormToClear() {
 		
-	        boolean nameCleared = wait.until(ExpectedConditions.attributeToBe(reviewNameField, "value", ""));
-	        while(!nameCleared) {
-	        	nameCleared = wait.until(ExpectedConditions.attributeToBe(reviewNameField, "value", ""));
-	        }
-	        return;
+	    return   wait.until(ExpectedConditions.attributeToBe(reviewNameField, "value", ""));
+
 	}
 	
 	public void clearReviewFormFields() {
@@ -302,4 +305,44 @@ public class Pages {
 	    getReviewEmailField().clear();
 	    getReviewTextArea().clear();
 	}
+	
+	
+	public WebElement getSubscriptionHeader() {
+	    return get(subscriptionHeaderLocator);
+	}
+
+	public WebElement getSubscriptionEmailField() {
+	    return get(subscriptionEmailField);
+	}
+
+	public WebElement getSubscribeButton() {
+	    return get(subscribeButton);
+	}
+	
+	public void submitSubscription(String email) {
+	    getSubscriptionEmailField().clear();
+	    getSubscriptionEmailField().sendKeys(email);
+	    getSubscribeButton().click();
+	}
+	
+	public WebElement getSubscriptionSuccessMessage() {
+	    return wait.until(ExpectedConditions.visibilityOfElementLocated(subscriptionSuccessMessage));
+	}
+	
+	public boolean isSubscriptionSuccessMessageVisible() {
+	    try {
+	        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	        shortWait.until(ExpectedConditions.visibilityOfElementLocated(subscriptionSuccessMessage));
+	        return true;
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+	
+	public boolean waitForSubscriptionEmailToClear() {
+	  
+		return wait.until(ExpectedConditions.attributeToBe(subscriptionEmailField, "value", ""));
+	}
+	
+	
 }

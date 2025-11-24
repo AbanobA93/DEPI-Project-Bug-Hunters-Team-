@@ -39,67 +39,68 @@ public class SignUpPage extends BasePage {
     private By actualAccountDeletedMsg = By.xpath("//*[@id=\"form\"]/div/div/div/h2/b");
     private By continueToHomeAfterDeleteBTN = By.cssSelector("a[data-qa=\"continue-button\"]");
     private By expectedEmailAlreadyExists = By.cssSelector("#form > div > div > div:nth-child(3) > div > form > p");
-    //strings
-    private String expectedAccountCreatedMSG = "Account Created!";
-    private String expectedlURL = "https://automationexercise.com/login";
+    private By loggedInAsMsg = By.xpath("//*[contains(text(),'Logged in as')]");
+    // strings
+    private String expectedAccountCreatedMSG = "ACCOUNT CREATED!";
+    private String expectedURL = "https://automationexercise.com/login";
     private String expectedAccountDeletedMSG = "ACCOUNT DELETED!";
     private String expectedEmailAlreadyExistsMSG = "Email Address already exist!";
 
-
-    //getter
-    public String getActualURL(){
-        return expectedlURL;
+    // getter
+    public String getActualURL() {
+        return expectedURL;
     }
 
-    public By getActualAccountCreatedMSG (){
-        return actualAccountDeletedMsg;
+    public String getActualAccountCreatedMSG() {
+        return getText(actualAccountCreatedMsg);
     }
 
     public String getExpectedAccountCreatedMSG() {
         return expectedAccountCreatedMSG;
     }
 
-    public String getExpectedAccountDeletedMSG(){
+    public String getExpectedAccountDeletedMSG() {
         return expectedAccountDeletedMSG;
     }
-    public String getActualDeleteMSG(){
-        WebElement msgElement = wait.until(ExpectedConditions.visibilityOfElementLocated(actualAccountDeletedMsg));
-        return msgElement.getText();
-    }
 
+    public String getActualDeleteMSG() {
+        return getText(actualAccountDeletedMsg);
+    }
 
     public String getActualUrl_Login() {
         return driver.getCurrentUrl();
     }
 
-    public String getExpectedEmailAlreadyExistsMSG(){
-        WebElement msgElement = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(expectedEmailAlreadyExists)
-        );
-        return msgElement.getText();
+    public String getExpectedEmailAlreadyExistsMSG() {
+        return getText(expectedEmailAlreadyExists);
     }
 
     // Actions
 
-    public void clickSignupButton() {
-        driver.findElement(signupBTN).click();
+    public boolean isLoggedUserVisible() {
+        return driver.findElement(loggedInAsMsg).isDisplayed();
     }
 
+    public void clickSignupButton() {
+        click(signupBTN);
+    }
 
     public void signUpPhase1(String name, String email) {
 
-        driver.findElement(signupNameField).sendKeys(name);
-        driver.findElement(signupEmailField).sendKeys(email);
-        driver.findElement(signupBTN).click();
-    }
-    public void mailRadioBtn (){
-        driver.findElement(maleRadioBTN).click();
-    }
-    public void password (String password){
-        driver.findElement(passwordCreationField).sendKeys(password);
+        writeText(signupNameField, name);
+        writeText(signupEmailField, email);
+        click(signupBTN);
     }
 
-    //calendar drop list
+    public void mailRadioBtn() {
+        click(maleRadioBTN);
+    }
+
+    public void password(String password) {
+        writeText(passwordCreationField, password);
+    }
+
+    // calendar drop list
 
     public void dob(String day, String month, String year) {
         WebElement dayDropList = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("days")));
@@ -110,49 +111,57 @@ public class SignUpPage extends BasePage {
         new Select(monthDropList).selectByVisibleText(month);
         new Select(yearDropList).selectByVisibleText(year);
     }
-    public void checkBoxes (){
-        driver.findElement(newsLitterCheckBox).click();
-        driver.findElement(specialOfferCheckBox).click();
+
+    public void checkBoxes() {
+        click(newsLitterCheckBox);
+        click(specialOfferCheckBox);
     }
 
-    public void firstAndLastName(String firstname,String lastname){
-        driver.findElement(firstNameField).sendKeys(firstname);
-        driver.findElement(lastNameField).sendKeys(lastname);
-    }
-    public void company (String company){
-        driver.findElement(companyField).sendKeys(company);
+    public void firstAndLastName(String firstname, String lastname) {
+        writeText(firstNameField, firstname);
+        writeText(lastNameField, lastname);
     }
 
-    public void addresses (String firstAddress,
-                           String secondAddress,
-                           String country,
-                           String stateName,
-                           String zipCodeNumber,
-                           String cityName) {
-        driver.findElement(addresField1).sendKeys(firstAddress);
-        driver.findElement(addressField2).sendKeys(secondAddress);
-        driver.findElement(countryDropDown).sendKeys(country + Keys.ENTER);
-        driver.findElement(stateField).sendKeys(stateName);
-        driver.findElement(cityField).sendKeys(cityName);
-        driver.findElement(zipCodeField).sendKeys(zipCodeNumber);
+    public void company(String company) {
+        writeText(companyField, company);
     }
+
+    public void addresses(String firstAddress,
+            String secondAddress,
+            String country,
+            String stateName,
+            String zipCodeNumber,
+            String cityName) {
+        writeText(addresField1, firstAddress);
+        writeText(addressField2, secondAddress);
+        writeText(countryDropDown, country + Keys.ENTER);
+        writeText(stateField, stateName);
+        writeText(cityField, cityName);
+        writeText(zipCodeField, zipCodeNumber);
+    }
+
     public void mobileNumber(String mobile) {
-        driver.findElement(mobileNumberField).sendKeys(mobile);
+        writeText(mobileNumberField, mobile);
     }
 
-    public void createAccount (){
-        driver.findElement(createAccountBtn).click();
+    public void createAccount() {
+        click(createAccountBtn);
     }
-    public void continueToHomePageAfterCreateAccount (){
-        driver.findElement(continueBtnToHomeAfterCreateAccount).click();
+
+    public void continueToHomePageAfterCreateAccount() {
+        click(continueBtnToHomeAfterCreateAccount);
     }
-    public void delete (){
-        driver.findElement(deleteAccountBTN).click();
+
+    public void delete() {
+        click(deleteAccountBTN);
     }
-    public void continueToHomeAfterDelete(){
-        driver.findElement(continueToHomeAfterDeleteBTN).click();
+
+    public void continueToHomeAfterDelete() {
+        click(continueToHomeAfterDeleteBTN);
     }
+
     public String actualURL() {
         return driver.getCurrentUrl();
     }
+
 }

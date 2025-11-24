@@ -47,7 +47,7 @@ public class ProductsPage extends BasePage {
     public void searchProduct() {
         waitForPageLoad();
         driver.findElement(searchBox).sendKeys(getDefaultProduct());
-        driver.findElement(searchBtn).click();
+        click(searchBtn);
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchedLabel));
     }
 
@@ -73,17 +73,22 @@ public class ProductsPage extends BasePage {
                 .until(webDriver -> ((JavascriptExecutor) webDriver)
                         .executeScript("return document.readyState").equals("complete"));
     }
+
     public void writeReview(String name, String email, String review) {
-        WebElement reviewTabElement = (WebElement)this.wait.until(ExpectedConditions.elementToBeClickable(this.reviewTab));
-        ((JavascriptExecutor)this.driver).executeScript("arguments[0].click();", new Object[]{reviewTabElement});
-        ((WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.nameInput))).sendKeys(new CharSequence[]{name});
-        ((WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.emailInput))).sendKeys(new CharSequence[]{email});
-        ((WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.reviewInput))).sendKeys(new CharSequence[]{review});
-        ((WebElement)this.wait.until(ExpectedConditions.elementToBeClickable(this.submitBtn))).click();
+        WebElement reviewTabElement = (WebElement) this.wait
+                .until(ExpectedConditions.elementToBeClickable(this.reviewTab));
+        ((JavascriptExecutor) this.driver).executeScript("arguments[0].click();", new Object[] { reviewTabElement });
+        ((WebElement) this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.nameInput)))
+                .sendKeys(new CharSequence[] { name });
+        ((WebElement) this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.emailInput)))
+                .sendKeys(new CharSequence[] { email });
+        ((WebElement) this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.reviewInput)))
+                .sendKeys(new CharSequence[] { review });
+        click(submitBtn);
     }
 
     public boolean isReviewSuccessDisplayed() {
-        WebElement msg = (WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.successMsg));
+        WebElement msg = (WebElement) this.wait.until(ExpectedConditions.visibilityOfElementLocated(this.successMsg));
         return msg.isDisplayed() && msg.getText().trim().equals("Thank you for your review.");
     }
 }

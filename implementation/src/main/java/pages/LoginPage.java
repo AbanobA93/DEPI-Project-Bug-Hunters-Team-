@@ -5,43 +5,47 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    //Data
+    // Data
     static String username = "hellolo@heleilo.com";
     static String password = "test.tester@!#";
     static String expectedColor = "#ffa500";
     static String expectedInvalidLogin = "Your email or password is incorrect!";
 
-    //locators
+    // locators
     By loginEmailField = By.cssSelector("input[data-qa=\"login-email\"]");
     By passwordField = By.cssSelector("input[data-qa=\"login-password\"]");
     By loginBTN = By.cssSelector("button[data-qa=\"login-button\"]");
-    By invalidLoginErrorMSG = By.xpath("//p[text()=\"Your email or password is incorrect!\"]");
+    By invalidLoginErrorMSG = By.cssSelector("p[style=\"color: red;\"]");
 
-    //getter
+    // getter
 
     public static String getExpectedColor() {
         return expectedColor;
     }
 
-    public String getExpectedInvalidLogin(){
+    public String getExpectedInvalidLogin() {
         return expectedInvalidLogin;
     }
 
-    public String getActualInvalidLoginMSG (){
-        return driver.findElement(invalidLoginErrorMSG).getText();
+    public String getActualInvalidLoginMSG() {
+        return getText(invalidLoginErrorMSG);
     }
 
-    public void validLogin (){
-        driver.findElement(loginEmailField).sendKeys(username);
-        driver.findElement(passwordField).sendKeys(password);
-        driver.findElement(loginBTN).click();
+    public By getInvalidLoginErrorLocator() {
+        return invalidLoginErrorMSG;
+    }
+
+    // actions
+    public void validLogin() {
+        writeText(loginEmailField, username);
+        writeText(passwordField, password);
+        click(loginBTN);
     }
 
     public String actualHomeBtnColor() {
@@ -50,10 +54,10 @@ public class LoginPage extends BasePage{
         return org.openqa.selenium.support.Color.fromString(color).asHex();
     }
 
-    public void invalidLogin (){
-        driver.findElement(loginEmailField).sendKeys("username");
-        driver.findElement(passwordField).sendKeys("password");
-        driver.findElement(loginBTN).click();
+    public void invalidLogin() {
+        writeText(loginEmailField, "username@user.name");
+        writeText(passwordField, "password");
+        click(loginBTN);
     }
 
 }

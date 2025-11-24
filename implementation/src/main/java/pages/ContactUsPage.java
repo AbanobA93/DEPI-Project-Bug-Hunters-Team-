@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 
-public class ContactUsPage extends BasePage{
+public class ContactUsPage extends BasePage {
     public ContactUsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    //locators
+    // locators
     By nameField = By.name("name");
     By emailField = By.name("email");
     By subjectField = By.name("subject");
@@ -22,22 +22,20 @@ public class ContactUsPage extends BasePage{
     By contactUsMsg = By.xpath("//h2[text()='Contact ']");
     By successMSG = By.className("alert-success");
 
-    //Data
+    // Data
     String contactusTXT = "CONTACT US";
 
-
-
-    //getters
-    public String getContactusTXT(){
+    // getters
+    public String getContactusTXT() {
         return contactusTXT;
     }
 
-    public String contactUsMsgTXT (){
-       return driver.findElement(contactUsMsg).getText();
+    public String contactUsMsgTXT() {
+        return driver.findElement(contactUsMsg).getText();
     }
 
-    //actions
-    public void userCanContactUs(String name,String email,String subject,String message) {
+    // actions
+    public void userCanContactUs(String name, String email, String subject, String message) {
 
         driver.findElement(nameField).sendKeys(name);
         driver.findElement(emailField).sendKeys(email);

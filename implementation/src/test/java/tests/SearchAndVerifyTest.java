@@ -16,5 +16,4 @@ public class SearchAndVerifyTest extends BaseTest {
         productsPage.clickFirstProduct();
     }
 
-
 }

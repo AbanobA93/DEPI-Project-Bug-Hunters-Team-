@@ -4,25 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LandingPage extends BasePage{
+public class LandingPage extends BasePage {
 
     public LandingPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    //Data
-    private static  String expectedURL = "https://www.automationexercise.com/";
-    private static  String expectedTitle = "Automation Exercise";
+    // Data
+    private static String expectedURL = "https://www.automationexercise.com/";
+    private static String expectedTitle = "Automation Exercise";
 
-
-    //locators
+    // locators
     By loginBTN = By.cssSelector("a[href=\"/login\"]");
     By contactUsBTN = By.className("fa-envelope");
     By testCasesBtn = By.linkText("Test Cases");
 
-
-
-    //getters
+    // getters
     public String getExpectedURL() {
         return actualURL();
     }
@@ -33,22 +30,28 @@ public class LandingPage extends BasePage{
 
     By productsBtn = By.cssSelector("a[href='/products']");
 
-
-
-    //actions
+    // actions
     public String actualURL() {
         return driver.getCurrentUrl();
     }
 
-    public String actualTitle (){return driver.getTitle();}
-
-    public void moveToLoginPage(){
-        driver.findElement(loginBTN).click();
+    public String actualTitle() {
+        return driver.getTitle();
     }
 
-    public void moveToContactUsPage (){driver.findElement(contactUsBTN).click();}
+    public void moveToLoginPage() {
+        click(loginBTN);
+    }
 
-    public void moveToTestCasesPage(){driver.findElement(testCasesBtn).click();}
+    public void moveToContactUsPage() {
+        click(contactUsBTN);
+    }
 
-    public void moveToProductsPage(){driver.findElement(productsBtn).click();}
+    public void moveToTestCasesPage() {
+        click(testCasesBtn);
+    }
+
+    public void moveToProductsPage() {
+        click(productsBtn);
+    }
 }

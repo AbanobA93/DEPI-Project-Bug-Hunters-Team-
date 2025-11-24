@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CheckOutPage extends BasePage{
+public class CheckOutPage extends BasePage {
     public CheckOutPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
@@ -24,7 +24,7 @@ public class CheckOutPage extends BasePage{
         public void placeOrder(String text) {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(30L));
             wait.until(ExpectedConditions.visibilityOfElementLocated(this.comment));
-            this.driver.findElement(this.comment).sendKeys(new CharSequence[]{text});
+            this.driver.findElement(this.comment).sendKeys(new CharSequence[] { text });
             wait.until(ExpectedConditions.elementToBeClickable(this.placeOrderBtn));
             this.driver.findElement(this.placeOrderBtn).click();
         }

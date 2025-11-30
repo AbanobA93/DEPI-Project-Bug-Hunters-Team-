@@ -1,0 +1,1 @@
+{"uuid":"0be5c17c-cb61-4201-8452-dad3a89e2b9b","name":"tests.BaseTest.setDriver","children":["d7c98015-2c27-44b6-a824-78200b375cd3"],"description":"","befores":[{"name":"setDriver","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1763992762596,"stop":1763992768042}],"afters":[],"start":1763992762596,"stop":1763992768042}
